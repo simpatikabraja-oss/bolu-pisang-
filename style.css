@@ -1,0 +1,381 @@
+/* --- VARIABEL WARNA TEMA (Nuansa Bolu Pisang) --- */
+:root {
+    --primary: #e0a96d;    /* Warna kuning kecokelatan bolu matang */
+    --primary-dark: #966138; /* Cokelat gelap untuk teks/aksen */
+    --bg: #1a120b;         /* Background gelap estetik */
+    --card-bg: #2c1e15;    /* Background kartu menu */
+}
+
+/* --- RESET & BASE STYLING --- */
+* {
+    margin: 0; 
+    padding: 0; 
+    box-sizing: border-box; 
+    outline: none; 
+    text-decoration: none;
+    font-family: 'Poppins', sans-serif;
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: var(--bg);
+    color: #fff;
+    overflow-x: hidden;
+}
+
+/* --- NAVBAR --- */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.4rem 7%;
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    background-color: rgba(26, 18, 11, 0.85);
+    backdrop-filter: blur(4px);
+    border-bottom: 1px solid var(--primary);
+    z-index: 999;
+}
+
+.navbar-logo {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #fff;
+}
+
+.navbar-logo span {
+    color: var(--primary);
+}
+
+.navbar-nav a {
+    color: #fff;
+    font-size: 1.1rem;
+    margin: 0 1rem;
+    display: inline-block;
+    transition: 0.2s linear;
+}
+
+.navbar-nav a:hover {
+    color: var(--primary);
+}
+
+/* Komponen Pencarian di Navbar */
+.search-form {
+    display: none; /* Default disembunyikan, nanti diaktifkan pakai JS */
+    position: absolute;
+    top: 100%; right: 7%;
+    background-color: #fff;
+    width: 300px;
+    height: 4rem;
+    align-items: center;
+    padding: 0 1rem;
+    border-radius: 0.5rem;
+}
+
+.search-form input {
+    height: 100%; width: 100%;
+    font-size: 1rem;
+    color: #333;
+    background: none;
+    border: none;
+}
+
+/* Tombol Ekstra Navigasi */
+.navbar-extra a {
+    color: #fff;
+    margin: 0 0.5rem;
+    transition: 0.2s;
+}
+
+.navbar-extra a:hover {
+    color: var(--primary);
+}
+
+#hamburger-menu {
+    display: none; /* Sembunyikan di desktop */
+}
+
+/* --- HERO SECTION --- */
+.hero {
+    min-height: 100vh;
+    background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.7)), url('gambar.jpg') no-repeat center center/cover;
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+.hero .content {
+    padding: 1.4rem 7%;
+    max-width: 60rem;
+}
+
+.hero h1 {
+    font-size: 4rem;
+    color: white;
+    line-height: 1.2;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
+}
+
+.hero h1 span {
+    color: var(--primary);
+}
+
+.hero p {
+    font-size: 1.3rem;
+    margin-top: 1rem;
+    line-height: 1.6;
+    color: #ddd;
+}
+
+.cta {
+    display: inline-block;
+    margin-top: 2rem;
+    padding: 1rem 2.5rem;
+    background-color: var(--primary);
+    color: var(--bg);
+    font-weight: bold;
+    border-radius: 0.5rem;
+    transition: 0.3s;
+}
+
+.cta:hover {
+    background-color: #fff;
+    color: var(--primary-dark);
+}
+
+/* --- ABOUT SECTION --- */
+.about, .menu, .contact {
+    padding: 6rem 7% 2rem;
+}
+
+.about h2, .menu h2, .contact h2 {
+    text-align: center;
+    font-size: 2.6rem;
+    margin-bottom: 3rem;
+}
+
+.about h2 span, .menu h2 span, .contact h2 span {
+    color: var(--primary);
+}
+
+.about .row {
+    display: flex;
+    gap: 2rem;
+    align-items: center;
+}
+
+.about .about-img {
+    flex: 1 1 40rem;
+}
+
+.about .about-img img {
+    width: 100%;
+    border-radius: 0.5rem;
+}
+
+.about .about-content {
+    flex: 1 1 40rem;
+}
+
+.about .about-content h3 {
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+    color: var(--primary);
+}
+
+.about .about-content p {
+    margin-bottom: 0.8rem;
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: #ccc;
+}
+
+/* --- MENU SECTION --- */
+.menu p {
+    text-align: center;
+    max-width: 40rem;
+    margin: auto auto 3rem;
+    color: #bbb;
+}
+
+.menu .row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2rem;
+}
+
+.menu-card {
+    background-color: var(--card-bg);
+    border: 1px solid #3d2b1f;
+    padding: 2rem;
+    border-radius: 0.5rem;
+    text-align: center;
+    width: 18rem;
+    transition: 0.3s;
+}
+
+.menu-card:hover {
+    transform: translateY(-5px);
+    border-color: var(--primary);
+}
+
+.menu-card img {
+    width: 100%;       
+    height: 12rem;     
+    object-fit: cover; 
+    border-radius: 0.3rem;
+}
+
+.menu-card-title {
+    margin: 1rem auto 0.5rem;
+    font-size: 1.3rem;
+}
+
+.menu-card .price {
+    color: var(--primary);
+    font-weight: bold;
+}
+
+/* --- CONTACT SECTION (Map Gede di Kiri, Form di Kanan) --- */
+.contact .row {
+    display: flex;
+    gap: 3rem; 
+    background-color: var(--card-bg);
+    padding: 3rem;
+    border-radius: 0.8rem;
+    align-items: stretch; 
+}
+
+.contact .map {
+    flex: 6; 
+    width: 100%;
+    min-height: 450px; 
+    border: none;
+    border-radius: 0.5rem;
+}
+
+.contact form {
+    flex: 4; 
+    display: flex;
+    flex-direction: column;
+    justify-content: center; 
+    gap: 1.5rem;
+}
+
+.contact .input-group {
+    display: flex;
+    align-items: center;
+    background-color: var(--bg);
+    border: 1px solid #3d2b1f;
+    padding-left: 1rem;
+    border-radius: 0.3rem;
+}
+
+.contact .input-group i {
+    color: var(--primary);
+}
+
+.contact .input-group input {
+    width: 100%;
+    padding: 1.2rem;
+    background: none;
+    border: none;
+    color: white;
+    font-size: 1rem;
+}
+
+.contact .btn {
+    padding: 1.2rem;
+    background-color: var(--primary);
+    color: var(--bg);
+    font-weight: bold;
+    font-size: 1rem;
+    border: none;
+    border-radius: 0.3rem;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.contact .btn:hover {
+    background-color: #fff;
+    color: var(--primary-dark);
+}
+
+/* --- FOOTER --- */
+footer {
+    background-color: #0d0906;
+    text-align: center;
+    padding: 2rem 0;
+    margin-top: 4rem;
+    border-top: 1px solid var(--primary);
+}
+
+footer .socials, footer .links {
+    margin-bottom: 1.5rem;
+}
+
+footer .socials a, footer .links a {
+    color: #fff;
+    margin: 0 1rem;
+    display: inline-block;
+    transition: 0.2s;
+}
+
+footer .socials a:hover, footer .links a:hover {
+    color: var(--primary);
+}
+
+footer .copyright span {
+    color: var(--primary);
+}
+
+/* --- RESPONSIVE MEDIA QUERIES --- */
+@media (max-width: 768px) {
+    html {
+        font-size: 62.5%; 
+    }
+
+    #hamburger-menu {
+        display: inline-block;
+    }
+
+    .navbar .navbar-nav {
+        position: absolute;
+        top: 100%;
+        right: -100%;
+        background-color: var(--card-bg);
+        width: 25rem;
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        padding-top: 2rem;
+        transition: 0.4s ease;
+        border-left: 1px solid var(--primary);
+    }
+
+    .navbar .navbar-nav.active {
+        right: 0;
+    }
+
+    .navbar .navbar-nav a {
+        display: block;
+        margin: 1.5rem 2rem;
+        font-size: 1.5rem;
+    }
+
+    /* Mengubah susunan baris menjadi menumpuk vertikal di layar kecil */
+    .about .row, .contact .row {
+        flex-direction: column;
+    }
+}
+
+@media (max-width: 450px) {
+    html {
+        font-size: 55%;
+    }
+    
+    .hero h1 {
+        font-size: 3rem;
+    }
+}
